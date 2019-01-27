@@ -360,7 +360,7 @@
           
             <p><font size="5"><strong>前言（python2的退休)</strong></font><br><br><br>  今天打开Python，本来想安装PIL（Python Imaging Library）用来处理图形，但是在python2.7环境下安装PIL后，提示安装失败，于是上Google寻找答案。PIL官网公共说明：PIL只支持python2.5、2.6、2.7，暂时不支持python3.X。但是python2即将寿终正寝，所以我干脆直接升级到最新版的python3.7.2，并使用pillow替代PIL。<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python2%E5%80%92%E8%AE%A1%E6%97%B6.png?x-oss-process=style/mystyle" alt=""><br><br></p>
 <p><font size="5"><strong>python3的上岗</strong></font><br><br></p>
-<center><font color="#00f" size="3">更改将python27路径改为python37(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/pythone%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">查看python版本号，已升级为3.7.2(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>pip的更新</strong></font><br><br><br>pip 是一个安装和管理 Python 包的工具，python安装包的工具有easy_install, setuptools, pip，distribute。使用这些工具都能下载并安装django，而pip是easy_install的替代品。在CPython解释器，pypy解释器，可以很好地工作。首先升级pip：<br><center><font color="#00f" size="3">升级前(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%89%8D.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级中(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E4%B8%AD.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级后(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%90%8E.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>安装依赖——pytesseract库、pillow库</strong></font><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>Windows安装Tesseract-OCR 4.00并配置环境变量</strong></font><br><br><br><a href="https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.00.00dev.exe" target="_blank" rel="noopener">Tesseract-OCR官网安装包链接</a><br>一路NEXT安装完成<br><br>配置系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%BD%AF%E4%BB%B6%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br>添加 tessdata 系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0%20tessdata%20%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F.png?x-oss-process=style/mystyle" alt=""><br><br>最后查看tesseract版本，安装成功！<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/tesseract%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>先在CMD中，测试一下</strong></font><br><br><br><center><font color="#00f" size="3"><strong>先识别一个简单的数字图片（图片如下）</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/images.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>识别结果如下图</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>演示视频</strong></font></center><br><div id="dplayer12" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer12"),"theme":"#FADFA3","video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%9B%BE%E7%89%87%E8%AF%86%E5%88%AB%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%B0%81%E9%9D%A2.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br><br><font size="5"><strong>ORC中文识别</strong></font><br><br><br>目前Tesseract-OCR只能识别数字和英文<br>为了让它可以识别汉字，先下载<a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="noopener">chi_sim.traindata字库</a>，并下载<a href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files" target="_blank" rel="noopener">jTessBoxEditor</a>用来训练字库。<br>将chi_sim.traindata字库文件安装在Tesseract-OCR的tessdata文件下<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.png?x-oss-process=style/mystyle" alt=""><br><br><br>安装完成tesseract-ocr后，我们还需要做一下配置,在C:\Users\huxiu\AppData\Local\Programs\Python\Python35\Lib\site-packages\pytesseract找到pytesseract.py打开后做如下操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#CHANGE THIS IF TESSERACT IS NOT IN YOUR PATH, OR IS NAMED DIFFERENTLY   </span><br><span class="line">#tesseract_cmd = &apos;tesseract&apos;</span><br><span class="line">tesseract_cmd = &apos;C:/Program Files (x86)/Tesseract-OCR/tesseract.exe&apos;</span><br></pre></td></tr></table></figure><br><br><br><br><center><font color="#00f" size="3">找一个带文字的图片测试（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/test.jpg?x-oss-process=style/mystyle" alt=""></center><br><br><br><center><font color="#00f" size="3">pycharm进行识别（如下图）</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%88%90%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">很明显，有识别错误，这个办法不完美（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E9%94%99%E5%88%AB%E5%AD%97.png?x-oss-process=style/mystyle" alt=""></center>
+<center><font color="#00f" size="3">更改将python27路径改为python37(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/pythone%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">查看python版本号，已升级为3.7.2(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>pip的更新</strong></font><br><br><br>pip 是一个安装和管理 Python 包的工具，python安装包的工具有easy_install, setuptools, pip，distribute。使用这些工具都能下载并安装django，而pip是easy_install的替代品。在CPython解释器，pypy解释器，可以很好地工作。首先升级pip：<br><center><font color="#00f" size="3">升级前(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%89%8D.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级中(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E4%B8%AD.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级后(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%90%8E.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>安装依赖——pytesseract库、pillow库</strong></font><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>Windows安装Tesseract-OCR 4.00并配置环境变量</strong></font><br><br><br><a href="https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.00.00dev.exe" target="_blank" rel="noopener">Tesseract-OCR官网安装包链接</a><br>一路NEXT安装完成<br><br>配置系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%BD%AF%E4%BB%B6%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br>添加 tessdata 系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0%20tessdata%20%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F.png?x-oss-process=style/mystyle" alt=""><br><br>最后查看tesseract版本，安装成功！<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/tesseract%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>先在CMD中，测试一下</strong></font><br><br><br><center><font color="#00f" size="3"><strong>先识别一个简单的数字图片（图片如下）</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/images.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>识别结果如下图</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>演示视频</strong></font></center><br><div id="dplayer12" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer12"),"theme":"#FADFA3","video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%9B%BE%E7%89%87%E8%AF%86%E5%88%AB%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%B0%81%E9%9D%A2.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br><br><font size="5"><strong>ORC中文识别</strong></font><br><br><br>目前Tesseract-OCR只能识别数字和英文<br>为了让它可以识别汉字，先下载<a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="noopener">chi_sim.traindata字库</a>，并下载<a href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files" target="_blank" rel="noopener">jTessBoxEditor</a>用来训练字库。<br>将chi_sim.traindata字库文件安装在Tesseract-OCR的tessdata文件下<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.png?x-oss-process=style/mystyle" alt=""><br><br><br>安装完成tesseract-ocr后,我们还需要做一下配置,在C:\Users\huxiu\AppData\Local\Programs\Python\Python35\Lib\site-packages\pytesseract找到pytesseract.py打开后做如下操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#CHANGE THIS IF TESSERACT IS NOT IN YOUR PATH, OR IS NAMED DIFFERENTLY   </span><br><span class="line">#tesseract_cmd = &apos;tesseract&apos;</span><br><span class="line">tesseract_cmd = &apos;C:/Program Files (x86)/Tesseract-OCR/tesseract.exe&apos;</span><br></pre></td></tr></table></figure><br><br><br><br><center><font color="#00f" size="3">找一个带文字的图片测试（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/test.jpg?x-oss-process=style/mystyle" alt=""></center><br><br><br><center><font color="#00f" size="3">pycharm进行识别（如下图）</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%88%90%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">很明显，有识别错误，这个办法不完美（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E9%94%99%E5%88%AB%E5%AD%97.png?x-oss-process=style/mystyle" alt=""></center>
           
         
       
@@ -883,7 +883,7 @@
         
           
             
-        <div id="aplayer-VIbJmOrA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-fLyZeVEk" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content">[00:03.48]编曲：小皮
 [00:04.04]我从崖边跌落
 [00:06.49]落入星空辽阔
@@ -944,7 +944,7 @@
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-VIbJmOrA"),
+            element: document.getElementById("aplayer-fLyZeVEk"),
             narrow: false,
             autoplay: false,
             showlrc: 2,
@@ -1134,7 +1134,7 @@
         
           
             
-        <div id="aplayer-dVBLmTzD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-LRRWMnZa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content">[00:05.42]主唱：红鼻子小黑
 [00:06.32]编曲/混音：大蔚
 [00:07.71]监制：李纤橙 
@@ -1179,7 +1179,7 @@
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-dVBLmTzD"),
+            element: document.getElementById("aplayer-LRRWMnZa"),
             narrow: false,
             autoplay: false,
             showlrc: 2,
@@ -1372,7 +1372,7 @@
             <p><center><font color="#00f" size="4">2019.1.20优化【<strong>添加显示歌词功能</strong>】</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/1.20%E5%B0%81%E9%9D%A2.jpg?x-oss-process=style/mystyle" alt="">   </p>
 <p><font color="#DC143C">有一万个去见你的理由，却少了一个去见你的身份。</font>     ——————来自网易云热评</p>
 
-        <div id="aplayer-DCElSzVx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-WjUzWQVD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content">[00:18.178]也许还能在网上看到你的消息
 [00:21.988]也许我唱的歌还存在你的手机
 [00:25.528]也许我爱你埋在心底变成秘密
@@ -1424,7 +1424,7 @@
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-DCElSzVx"),
+            element: document.getElementById("aplayer-WjUzWQVD"),
             narrow: false,
             autoplay: false,
             showlrc: 2,
@@ -1442,7 +1442,7 @@
 <hr>
 <p><font color="#DC143C">爱对了人叫运气，爱错了人叫青春…</font>      ————来自网易云热评   </p>
 
-        <div id="aplayer-KrmrkWsj" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-WpCvAgCe" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content">[00:15.82] 制作人/编曲：薛琳可
 [00:16.82] 吉他：Jamie Wilson（AUS）
 [00:17.82] 贝斯：郑骅骅
@@ -1494,7 +1494,7 @@
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-KrmrkWsj"),
+            element: document.getElementById("aplayer-WpCvAgCe"),
             narrow: false,
             autoplay: false,
             showlrc: 2,
@@ -1512,7 +1512,7 @@
 <hr>
 <p><font color="#DC143C">一个人突然联系你了 正常 他在找备胎 突然不联系你了 也正常 你只是个备胎 有一天又联系你了 更正常 你是一个好备胎 接着又不联系你了 依然正常 有比你好的备胎出现了。</font>      ————来自网易云热评   </p>
 
-        <div id="aplayer-YFmseXHu" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-wupWxeLC" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content">[00:16.598]你会找我陪你哭
 [00:19.615]会让我整夜听你诉苦
 [00:23.425]总爱让我帮你挑选衣服
@@ -1566,7 +1566,7 @@
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-YFmseXHu"),
+            element: document.getElementById("aplayer-wupWxeLC"),
             narrow: false,
             autoplay: false,
             showlrc: 2,
@@ -1584,7 +1584,7 @@
 <hr>
 <p><font color="#DC143C">曾经我以为，这首歌最令人心疼的地方是没关系你也不用给我机会，反正我还有一生可以浪费。后来我终于等到我不爱你的那天，我才发现，这首歌最令人心疼的地方不是那句话，而是“有一个人能去爱，多珍贵”。因为再也没有一个人，可以让你那么掏心掏肺的去爱，可以让你付出所有所有的爱了。</font>      ————来自网易云热评   </p>
 
-        <div id="aplayer-WrYFPONi" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-vObEruBZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content">[00:01.850]编曲 : 郑楠
 [00:27.080]多久了 我都没变
 [00:30.160]爱你这回事 整整六年
@@ -1626,7 +1626,7 @@
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-WrYFPONi"),
+            element: document.getElementById("aplayer-vObEruBZ"),
             narrow: false,
             autoplay: false,
             showlrc: 2,
@@ -1644,7 +1644,7 @@
 <hr>
 <p><font color="#DC143C">陈奕迅唱得是成熟稳重拼搏，鹿晗唱得是这个时代年轻人该有的努力，唐汉霄唱得是这首歌真正的灵魂，唱得是他自己。</font>     ————来自网易云热评   </p>
 
-        <div id="aplayer-iadRBvcu" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-zytyirMn" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content">[00:11.650]我从来不说话
 [00:14.730]因为我害怕 没有人回答
 [00:22.510]我从来不挣扎
@@ -1672,7 +1672,7 @@
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-iadRBvcu"),
+            element: document.getElementById("aplayer-zytyirMn"),
             narrow: false,
             autoplay: false,
             showlrc: 2,
@@ -1849,12 +1849,12 @@
         
           
             
-        <div id="aplayer-XRGWlURT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-UklgaEsa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-XRGWlURT"),
+            element: document.getElementById("aplayer-UklgaEsa"),
             narrow: false,
             autoplay: false,
             showlrc: false,
