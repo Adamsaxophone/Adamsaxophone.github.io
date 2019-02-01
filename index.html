@@ -134,8 +134,6 @@
 
 
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -524,14 +522,17 @@
 
       
         
-          
-            <p><font size="5"><strong>前言（python2的退休)</strong></font><br><br><br>  今天打开Python，本来想安装PIL（Python Imaging Library）用来处理图形，但是在python2.7环境下安装PIL后，提示安装失败，于是上Google寻找答案。PIL官网公共说明：PIL只支持python2.5、2.6、2.7，暂时不支持python3.X。但是python2即将寿终正寝，所以我干脆直接升级到最新版的python3.7.2，并使用pillow替代PIL。<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python2%E5%80%92%E8%AE%A1%E6%97%B6.png?x-oss-process=style/mystyle" alt=""><br><br></p>
-<p><font size="5"><strong>python3的上岗</strong></font><br><br></p>
-<center><font color="#00f" size="3">更改将python27路径改为python37(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/pythone%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">查看python版本号，已升级为3.7.2(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>pip的更新</strong></font><br><br><br>pip 是一个安装和管理 Python 包的工具，python安装包的工具有easy_install, setuptools, pip，distribute。使用这些工具都能下载并安装django，而pip是easy_install的替代品。在CPython解释器，pypy解释器，可以很好地工作。首先升级pip：<br><center><font color="#00f" size="3">升级前(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%89%8D.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级中(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E4%B8%AD.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级后(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%90%8E.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>安装依赖——pytesseract库、pillow库</strong></font><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>Windows安装Tesseract-OCR 4.00并配置环境变量</strong></font><br><br><br><a href="https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.00.00dev.exe" target="_blank" rel="noopener">Tesseract-OCR官网安装包链接</a><br>一路NEXT安装完成<br><br>配置系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%BD%AF%E4%BB%B6%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br>添加 tessdata 系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0%20tessdata%20%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F.png?x-oss-process=style/mystyle" alt=""><br><br>最后查看tesseract版本，安装成功！<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/tesseract%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>先在CMD中，测试一下</strong></font><br><br><br><center><font color="#00f" size="3"><strong>先识别一个简单的数字图片（图片如下）</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/images.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>识别结果如下图</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>演示视频</strong></font></center><br><div id="dplayer11" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer11"),"theme":"#FADFA3","video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%9B%BE%E7%89%87%E8%AF%86%E5%88%AB%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%B0%81%E9%9D%A2.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br><br><font size="5"><strong>ORC中文识别</strong></font><br><br><br>目前Tesseract-OCR只能识别数字和英文<br>为了让它可以识别汉字，先下载<a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="noopener">chi_sim.traindata字库</a>，并下载<a href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files" target="_blank" rel="noopener">jTessBoxEditor</a>用来训练字库。<br>将chi_sim.traindata字库文件安装在Tesseract-OCR的tessdata文件下<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.png?x-oss-process=style/mystyle" alt=""><br><br><br>安装完成tesseract-ocr后，我们还需要做一些配置，在C:\Users\huxiu\AppData\Local\Programs\Python\Python35\Lib\site-packages\pytesseract找到pytesseract.py打开后做如下操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#CHANGE THIS IF TESSERACT IS NOT IN YOUR PATH, OR IS NAMED DIFFERENTLY   </span><br><span class="line">#tesseract_cmd = &apos;tesseract&apos;</span><br><span class="line">tesseract_cmd = &apos;C:/Program Files (x86)/Tesseract-OCR/tesseract.exe&apos;</span><br></pre></td></tr></table></figure><br><br><br><br><center><font color="#00f" size="3">找一个带文字的图片测试（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/test.jpg?x-oss-process=style/mystyle" alt=""></center><br><br><br><center><font color="#00f" size="3">pycharm进行识别（如下图）</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%88%90%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">很明显，有识别错误，这个办法不完美（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E9%94%99%E5%88%AB%E5%AD%97.png?x-oss-process=style/mystyle" alt=""></center><br><br><br><font size="5"><strong>JTessBoxEditorFX训练字库</strong></font><br>一定要选择FX版本，不然字库矫正时不支持中文汉字！！！<br>（1）利用JTessBoxEditorFX将图片重命名（方便box文件使用）<br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%9B%BE%E7%89%87%E9%87%8D%E5%91%BD%E5%90%8D.png?x-oss-process=style/mystyle" alt=""></center><br><br><br>（2）命令行新建Box文件<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%94%9F%E6%88%90box%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle" alt=""><br><br><br>（3）打开tif文件并矫正<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%9F%AB%E6%AD%A3.png?x-oss-process=style/mystyle" alt=""><br><br><br>（4）矫正完成<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%9F%AB%E6%AD%A3%E5%90%8E.png?x-oss-process=style/mystyle" alt=""><br><br><br><br>（5）命令行生成训练文件(训练自己的字库)<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AE%AD%E7%BB%83tr%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle" alt=""><br><br><br><br>（6）输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unicharset_extractor cys.test.exp0.box</span><br></pre></td></tr></table></figure><br><br>生成unicharset文件并重命名为cys.unicharset<br><br><br><br>（7）命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo test 0 0 0 0 0 &gt;font_properties</span><br></pre></td></tr></table></figure><br><br>生成文件<br><br><br>(8)命令行输入<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mftraining -F font_properties -U cys.unicharset -O cys.unicharset cys.test.exp0.tr</span><br><span class="line">   </span><br><span class="line">cntraining cys.test.exp0.tr</span><br></pre></td></tr></table></figure><br><br>之后，会生成四个文件<br><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%94%9F%E6%88%904%E4%B8%AA%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle" alt=""></center><br><br><br>重命名这四个文件，分别在前面添加cys（即字库名）<br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0cys%E5%89%8D%E7%BC%80.png?x-oss-process=style/mystyle" alt=""></center><br><br><br><br><br>命令行输入combine_tessdata cys.生成cys.traineddata<br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%9E%8D%E5%90%88.png?x-oss-process=style/mystyle" alt=""></center><br><br><br>最后，将训练好的cys.traineddata放入C:\Program Files (x86)\Tesseract-OCR\tessdata的tessdata目录下<font color="#B22222" size="4">(我也是拥有属于自己字库的男人了！哈哈哈哈哈哈！) </font><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/cys%E5%AD%97%E5%BA%93.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>使用训练过的字库再次测试</strong></font><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%81%87.png?x-oss-process=style/mystyle" alt=""><br><center><font color="#B22222" size="5"><strong>成功!!!!!</strong></font></center>  
-          
+          <p><font size="5"><strong>前言（python2的退休)</strong></font><br><br><br>  今天打开Python，本来想安装PIL（Python Imaging Library）用来处理图形，但是在python2.7环境下安装PIL后，提示安装失败，于是上Google寻找答案。PIL官网公共说明：PIL只支持python2.5、2.6、2.7，暂时不支持python3.X。但是python2即将寿终正寝，所以我干脆直接升级到最新版的python3.7.2，并使用pillow替代PIL。<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python2%E5%80%92%E8%AE%A1%E6%97%B6.png?x-oss-process=style/mystyle" alt=""><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/python/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -688,27 +689,21 @@
 
       
         
-          
-            <center><font color="#00f" size="4"><strong>90后的记忆（广告篇）</strong></font></center>    
+          <center><font color="#00f" size="4"><strong>90后的记忆（广告篇）</strong></font></center>    
 
 <center>回忆杀！那些年，我们看过的广告，你还记得吗？</center><br><center><font color="#08f" size="3">PS：<strong>最后一个广告是我童年阴影</strong></font></center> 
 
-<p><center> 【给妈妈洗脚】</center><br><div id="dplayer3" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer3"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E7%BB%99%E5%A6%88%E5%A6%88%E6%B4%97%E8%84%9A.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_1.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>   </p>
-<p><center> 【旺旺碎冰冰】</center><br><div id="dplayer4" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer4"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E6%97%BA%E6%97%BA%E7%A2%8E%E5%86%B0%E5%86%B0.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_2.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>    </p>
-<p><center> 【旺旺O泡果奶】</center><br><div id="dplayer5" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer5"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E6%97%BA%E6%97%BAO%E6%B3%A1%E6%9E%9C%E5%A5%B6.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_3.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>    </p>
-<p><center> 【新盖中盖牌高钙】</center><br><div id="dplayer6" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer6"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E6%96%B0%E7%9B%96%E4%B8%AD%E7%9B%96%E7%89%8C%E9%AB%98%E9%92%99.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_4.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>   </p>
-<p><center> 【新东方烹饪学校】</center><br><div id="dplayer7" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer7"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E6%96%B0%E4%B8%9C%E6%96%B9%E7%83%B9%E9%A5%AA%E5%AD%A6%E6%A0%A1.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_5.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>   </p>
-<p><center> 【广州好迪】</center><br><div id="dplayer8" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer8"),"theme":"#FADFA3","video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E5%B9%BF%E5%B7%9E%E5%A5%BD%E8%BF%AA.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_6.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>      </p>
-<p><center> 【奥利奥】</center><br><div id="dplayer9" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer9"),"theme":"#FADFA3","video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E5%A5%A5%E5%88%A9%E5%A5%A5.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_7.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>    </p>
-<p><center> 【大宝SOD蜜】</center><br><div id="dplayer10" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer10"),"theme":"#FADFA3","video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E5%A4%A7%E5%AE%9DSOD%E8%9C%9C.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_8.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script> </p>
-<p><center> 【恒源祥】（童年阴影，建议打开弹幕！）</center> </p>
-<iframe src="//player.bilibili.com/player.html?aid=883503&cid=1284151&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-
-          
+<p><center> 【给妈妈洗脚】</center><br><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E7%BB%99%E5%A6%88%E5%A6%88%E6%B4%97%E8%84%9A.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_1.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/23/90后广告/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -865,30 +860,14 @@
 
       
         
-          
-            <center><font color="#00f" size="4"><strong>今天的主角——油猴脚本</strong></font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_1.png?x-oss-process=style/mystyle" alt=""><br><br><center><strong>油猴脚本支持的浏览器：Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox</strong></center>
-
-<hr>
-<center><font size="3">【简单的介绍】</font></center>
-
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_3.png?x-oss-process=style/mystyle" alt="">   </p>
-<center>上图为油猴脚本库</center> 
-
-
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_2.png?x-oss-process=style/mystyle" alt=""></p>
-<center>上图为（tampermonkey）油猴脚本的控制面板</center>   
-
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_4.png?x-oss-process=style/mystyle" alt=""></p>
-<center>上图为使用界面，点击箭头所指的按键，即刻观看付费、VIP视频</center>   
-
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_5.png?x-oss-process=style/mystyle" alt="">   </p>
-<center>上图为点击按钮后的界面（点击按钮后，自动解析视频链接）</center>
-
-<hr>
-<center><font color="#00f" size="4"><strong>华丽的分割线(视频教程)</strong></font></center>
-
-<center> 【Microsoft Edge浏览器教程】</center><br><div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Microsoft%20edge%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_7.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br><center> 【Chrome浏览器教程】</center><br><div id="dplayer2" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer2"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Google%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_6.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br>———-<br><center><font color="#00ff" size="4"><strong>若有疑问，请在下方留言</strong></font></center>
-          
+          <center><font color="#00f" size="4"><strong>今天的主角——油猴脚本</strong></font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.23/Screenshot_1.png?x-oss-process=style/mystyle" alt=""><br><br><center><strong>油猴脚本支持的浏览器：Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox</strong></center><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/23/VIP视频/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1048,28 +1027,22 @@
 
       
         
-          
-            
-			<script>
+          <script>
 				console.error("TypeError: Cannot read property '_id' of undefined");
 			</script>    
-<center><font color="#00f" size="4"><strong>边听音乐，边看照片，何乐而不为？</strong></font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/0.JPG?x-oss-process=style/mystyle" alt=""><center>2003.7摄于<font color="#DC143C">南京·雨花台</font></center>    
+<center><font color="#00f" size="4"><strong>边听音乐，边看照片，何乐而不为？</strong></font></center>   
 
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/10.JPG?x-oss-process=style/mystyle" alt=""><center>2017.4摄于<font color="#DC143C">南京·雨花台</font></center>     </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/1.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">广州·红砖厂</font></center>     </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/2.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">广州·红砖厂</font></center>   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/3.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">广州·广州塔顶楼</font></center>    </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/4.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">南京·夫子庙</font></center>    </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/5.JPG?x-oss-process=style/mystyle" alt=""><center>2018.2摄于<font color="#DC143C">重庆·四川美术学院</font></center>   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/6.JPG?x-oss-process=style/mystyle" alt=""><center>2018.4摄于<font color="#DC143C">济南·黑龙潭</font></center>    </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/7.JPG?x-oss-process=style/mystyle" alt=""><center>2018.8摄于<font color="#DC143C">丽江·丽江古城</font></center>      </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/8.JPG?x-oss-process=style/mystyle" alt="">   <center>2018.8摄于<font color="#DC143C">昆明·昆明大学</font></center>      </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/9.JPG?x-oss-process=style/mystyle" alt=""><center>2018.8摄于<font color="#DC143C">丽江·丽江市政府</font></center></p>
-
-          
+<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/10.JPG?x-oss-process=style/mystyle" alt=""><center>2017.4摄于<font color="#DC143C">南京·雨花台</font></center><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/21/人像照片/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1226,29 +1199,23 @@
 
       
         
-          
-            
-			<script>
+          <script>
 				console.error("TypeError: Cannot read property '_id' of undefined");
 			</script>    
 <center><font color="#00f" size="4"><strong>边听音乐，边看照片，何乐而不为？</strong></font></center>    
 
 <hr>
-<p><center>以下均来自<font color="#99382" size="3">广州·点都德</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_0926.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_0859.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_0856.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_0854.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_0851.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_0850.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<hr>
-<p><center>以下均来自<font color="#99382" size="3">徐州·三胞</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_7100.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_7302.JPG?x-oss-process=style/mystyle" alt="">   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_7902.JPG?x-oss-process=style/mystyle" alt=""></p>
-
-          
+<p><center>以下均来自<font color="#99382" size="3">广州·点都德</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E7%85%A7%E7%89%87/IMG_0926.JPG?x-oss-process=style/mystyle" alt=""><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/21/美食照片/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1405,326 +1372,14 @@
 
       
         
-          
-            <p><center><font color="#00f" size="4">2019.1.20优化【<strong>添加显示歌词功能</strong>】</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/1.20%E5%B0%81%E9%9D%A2.jpg?x-oss-process=style/mystyle" alt="">   </p>
-<p><font color="#DC143C">有一万个去见你的理由，却少了一个去见你的身份。</font>     ——————来自网易云热评</p>
-
-        <div id="aplayer-qdrDYjUZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content">[00:18.178]也许还能在网上看到你的消息
-[00:21.988]也许我唱的歌还存在你的手机
-[00:25.528]也许我爱你埋在心底变成秘密
-[00:29.128]也许你想我的时候我也在想你
-[00:35.598]多少次我告诉自己
-[00:38.198]此情可待已成追忆
-[00:43.189]多少次我告诫自己
-[00:46.178]不再为你流泪到一败涂地
-[00:49.968]我和你不再联系
-[00:52.499]希望你不要介意
-[00:53.998]要怪就怪当初没在一起
-[00:57.180]而你对现在也比较满意
-[01:00.518]所以我留下来也没有道理
-[01:05.780]我和你断了联系
-[01:07.089]不代表我不想你
-[01:09.229]走到哪里还是会有惦记
-[01:12.800]而我也开始试着去忘记
-[01:16.498]抹去我们过去的放弃的所有交集
-[01:36.490]也许还能在网上看到你的消息
-[01:39.738]也许我唱的歌还存在你的手机
-[01:43.880]也许我爱你埋在心底变成秘密
-[01:47.900]也许你想我的时候我也在想你
-[01:53.269]多少次我告诉自己
-[01:56.898]此情可待已成追忆
-[02:00.328]多少次我告诫自己
-[02:04.590]不再为你流泪到一败涂地
-[02:08.880]我和你不再联系
-[02:10.027]希望你不要介意
-[02:11.248]要怪就怪当初没在一起
-[02:15.389]而你对现在也比较满意
-[02:18.898]所以我留下来也没有道理
-[02:22.488]我和你断了联系
-[02:24.980]不代表我不想你
-[02:26.980]走到哪里还是会有惦记
-[02:30.408]而我也开始试着去忘记
-[02:33.968]抹去我们过去的放弃的所有交集
-[02:38.408]我和你不再联系
-[02:39.570]希望你不要介意
-[02:41.990]要怪就怪当初没在一起
-[02:46.198]而你对现在也比较满意
-[02:49.458]所以我留下来也没有道理
-[02:53.200]我和你断了联系
-[02:55.558]不代表我不想你
-[02:56.828]走到哪里还是会有惦记
-[02:59.868]而我也开始试着去忘记
-[03:04.089]抹去我们过去的放弃的所有交集
-
-</pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-qdrDYjUZ"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 2,
-            music: {
-              title: "不再联系",
-              author: "夏天Alex",
-              url: "https://music.163.com/song/media/outer/url?id=175072.mp3",
-              pic: "https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/%E4%B8%8D%E5%86%8D%E8%81%94%E7%B3%BB.png?x-oss-process=style/mystyle",
-              lrc: "不再联系.txt"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-<hr>
-<p><font color="#DC143C">爱对了人叫运气，爱错了人叫青春…</font>      ————来自网易云热评   </p>
-
-        <div id="aplayer-XvYZNgZZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content">[00:15.82] 制作人/编曲：薛琳可
-[00:16.82] 吉他：Jamie Wilson（AUS）
-[00:17.82] 贝斯：郑骅骅
-[00:18.82] 打击乐：王斌
-[00:19.82] 弦乐：中国国家交响乐团
-
-[00:30.82] 想问你还快乐吗
-[00:34.45] 却又觉得问候多余了
-[00:38.16] 回忆的皱褶
-[00:40.52] 已被时间铺平了
-[00:45.60] 从前心里的难得
-[00:49.24] 怎么忽然挥霍成舍得
-[00:52.86] 没有爱的惊心动魄
-[00:55.44] 只剩嘴角的洒脱
-[01:00.33] 我们的爱呀爱呀
-[01:04.87] 好像风中沙
-[01:08.63] 轻轻吹过你的手掌
-[01:12.24] 却握不住她
-[01:15.07] 有时候爱呀爱呀
-[01:19.58] 无声的挣扎
-[01:23.20] 你在我生命留下喧哗
-[01:27.41] 离开后却安静的可怕
-[01:53.50] 从前心里的难得
-[01:57.64] 怎么忽然挥霍成舍得
-[02:01.22] 没有爱的惊心动魄
-[02:03.84] 只剩嘴角的洒脱
-[02:08.66] 我们的爱呀爱呀
-[02:13.20] 好像风中沙
-[02:16.94] 轻轻吹过你的手掌
-[02:20.65] 却握不住她
-[02:23.44] 有时候爱呀爱呀
-[02:27.92] 无声的挣扎
-[02:31.56] 你在我生命留下喧哗
-[02:35.53] 离开后却安静的可怕
-[02:41.18] 话来不及说
-[02:44.21] 在心里翻滚啊
-[02:47.94] 变成感情线的分叉
-[02:51.92] 提醒我你来过
-[03:00.11] 我们的爱呀爱呀
-[03:04.95] 好像风中沙
-[03:08.60] 轻轻吹过你的手掌
-[03:12.17] 却握不住她
-[03:15.31] 有时候爱呀爱呀
-[03:19.54] 无声的挣扎
-[03:23.30] 你在我生命留下喧哗
-[03:27.24] 离开后却安静的可怕
-[03:38.04] 那些话就请你忘了吧
-</pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-XvYZNgZZ"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 2,
-            music: {
-              title: "爱呀",
-              author: "金玟岐",
-              url: "https://music.163.com/song/media/outer/url?id=28285912.mp3",
-              pic: "https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/%E4%B8%83%E5%8F%8B.png",
-              lrc: "爱呀.txt"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-<hr>
-<p><font color="#DC143C">一个人突然联系你了 正常 他在找备胎 突然不联系你了 也正常 你只是个备胎 有一天又联系你了 更正常 你是一个好备胎 接着又不联系你了 依然正常 有比你好的备胎出现了。</font>      ————来自网易云热评   </p>
-
-        <div id="aplayer-cXVdBXCE" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content">[00:16.598]你会找我陪你哭
-[00:19.615]会让我整夜听你诉苦
-[00:23.425]总爱让我帮你挑选衣服
-[00:27.337]我都在你身边当你孤独
-[00:32.329]你找我陪你无聊
-[00:35.427]陪你看你最爱的频道
-[00:39.391]总要让我陪着你睡不着
-[00:43.251]陪着你吵闹陪着你感冒
-[00:48.130]我知道你最爱的口味
-[00:51.535]知道你最爱用的香水
-[00:55.498]最爱说的词汇
-[00:58.192]最爱晚睡和你最爱是谁
-[01:05.515]没有关系我们只是朋友
-[01:09.710]偶尔会替你分担你的伤口
-[01:13.860]把我的肩膀借给你当枕头
-[01:17.199]在你需要我的时候
-[01:21.379]没有关系我们只是朋友
-[01:25.390]所以不会有分开的理由
-[01:29.550]只是偶尔会问我自己
-[01:33.670]闹够了没有
-[01:38.351]你告诉我他很好
-[01:41.704]你想要的他都会知道
-[01:45.274]喜欢他永远都不会计较
-[01:49.234]你那些荒唐的无理取闹
-[01:53.470]你说他对你说谎
-[01:57.525]说他不再会为你着想
-[02:01.333]已经对他渐渐感到失望
-[02:05.344]我只能默默的替你疗伤
-[02:10.270]为什么要我看你流泪
-[02:13.531]你的痛都让我来体会
-[02:17.800]都由我来安慰 也无所谓
-[02:22.726]不管你爱着谁
-[02:27.683]没有关系我们只是朋友
-[02:31.980]偶尔会替你分担你的伤口
-[02:35.620]把我的肩膀借给你当枕头
-[02:39.277]在你需要我的时候
-[02:42.883]没有关系我们只是朋友
-[02:46.386]所以不会有分开的理由
-[02:51.314]只是偶尔会问我自己
-[02:55.376]闹够了没有
-[02:58.169]
-[03:16.367]你会不会看到有一个我
-[03:19.720]把你的失落变成我的难过
-[03:23.786]扮演的角色只能保持沉默
-[03:27.849]坚持着唯一的执着
-[03:32.019]我该怎么才能和你配合
-[03:36.380]要多少虚伪才扮演的磊落
-[03:40.249]有多少次想对你说
-[03:43.810]你身边还有我
-</pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-cXVdBXCE"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 2,
-            music: {
-              title: "闹够了没有",
-              author: "赖伟锋",
-              url: "https://music.163.com/song/media/outer/url?id=28302912.mp3",
-              pic: "https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/%E9%97%B9%E5%A4%9F%E4%BA%86%E6%B2%A1%E6%9C%89.png?x-oss-process=style/mystyle",
-              lrc: "闹够了没有.txt"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-<hr>
-<p><font color="#DC143C">曾经我以为，这首歌最令人心疼的地方是没关系你也不用给我机会，反正我还有一生可以浪费。后来我终于等到我不爱你的那天，我才发现，这首歌最令人心疼的地方不是那句话，而是“有一个人能去爱，多珍贵”。因为再也没有一个人，可以让你那么掏心掏肺的去爱，可以让你付出所有所有的爱了。</font>      ————来自网易云热评   </p>
-
-        <div id="aplayer-MVpAIuQP" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content">[00:01.850]编曲 : 郑楠
-[00:27.080]多久了 我都没变
-[00:30.160]爱你这回事 整整六年
-[00:40.680]你最好 做好准备
-[00:44.410]我没有打算 停止一切
-[00:54.150]想说我没有志愿
-[01:00.990]也没有事情好消遣
-[01:08.610]有一个人能去爱
-[01:13.360]多珍贵
-[01:20.510]没关系你也不用给我机会
-[01:27.360]反正我还有一生可以浪费
-[01:34.570]我就是剩这么一点点倔 
-[01:40.760]称得上 我的优点
-[01:48.240]没关系你也不用对我惭愧
-[01:54.830]也许我根本喜欢被你浪费
-[02:01.730]随便你今天拼命爱上谁 
-[02:08.170]我都会 坦然面对
-[02:15.510]即使要我跟你再耗个十年 无所谓
-[02:29.840]
-[02:57.910]你和他 没有如愿 
-[03:01.520]短短半年内 开始分裂
-[03:11.730]我的爱 依旧没变
-[03:14.830]连我自己都 对我钦佩
-[03:25.730]有的是很多资源
-[03:31.720]我有的是很多时间
-[03:39.120]不去爱才是浪费 
-[03:44.880]多不对
-[03:51.460]没关系你也不用给我机会
-[03:58.530]反正我还有一生可以浪费
-[04:05.150]我就是剩这么一点点倔 
-[04:11.290]称得上 我的优点
-[04:19.010]没关系你也不用对我惭愧
-[04:25.830]也许我根本喜欢被你浪费
-[04:33.050]就算我再去努力爱上谁 
-[04:39.150]到头来 也是白费
-[04:55.900]不如永远跟你耗来得快乐 
-[05:03.800]对不对
-</pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-MVpAIuQP"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 2,
-            music: {
-              title: "浪费",
-              author: "徐佳莹翻唱",
-              url: "https://music.163.com/song/media/outer/url?id=407002483.mp3",
-              pic: "https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/%E6%B5%AA%E8%B4%B9.png?x-oss-process=style/mystyle",
-              lrc: "浪费.txt"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>   
-<hr>
-<p><font color="#DC143C">陈奕迅唱得是成熟稳重拼搏，鹿晗唱得是这个时代年轻人该有的努力，唐汉霄唱得是这首歌真正的灵魂，唱得是他自己。</font>     ————来自网易云热评   </p>
-
-        <div id="aplayer-hPRiZXcS" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content">[00:11.650]我从来不说话
-[00:14.730]因为我害怕 没有人回答
-[00:22.510]我从来不挣扎
-[00:25.650]因为我知道 这世界太大
-[00:33.480]太多时间浪费 太多事要面对
-[00:38.920]太多已无所谓 太多难辨真伪
-[00:47.070]太多纷扰是非 在你身边是谁
-[00:55.740]最渺小的我 有大大的梦
-[01:01.100]时间向前走一定只有路口没有尽头
-[01:07.180]纷纷扰扰这个世界 所有的了解
-[01:13.030]只要 让我留在你身边
-[01:17.530]最渺小的我 有大大的梦
-[01:22.990]我愿意安静的活在每个有你的角落
-[01:28.990]如果生活还有什么 会让你难过
-[01:34.900]别怕 让我留在你身边 都陪你渡过
-[02:06.640]最渺小的我 最卑微的梦
-[02:12.040]我发现这世界没有那么那么的不同
-[02:18.180]现实如果对你不公 别计较太多
-[02:23.930]走吧 暴风雨后的彩虹
-[02:31.140]也许会落空 也许会普通
-[02:36.390]也许这庸庸碌碌的黑白世界你不懂
-[02:42.690]生命中所有的路口 绝不是尽头
-[02:48.460]别怕 让我留在你身边 都陪你度过
-</pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-hPRiZXcS"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 2,
-            music: {
-              title: "让我留在你身边",
-              author: "唐汉霄",
-              url: "https://music.163.com/song/media/outer/url?id=451126768.mp3",
-              pic: "https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/%E8%AE%A9%E6%88%91%E7%95%99%E5%9C%A8%E4%BD%A0%E8%BA%AB%E8%BE%B9.png?x-oss-process=style/mystyle",
-              lrc: "让我留在你身边.txt"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>  
-          
+          <p><center><font color="#00f" size="4">2019.1.20优化【<strong>添加显示歌词功能</strong>】</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/1.20%E5%B0%81%E9%9D%A2.jpg?x-oss-process=style/mystyle" alt="">   </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/20/网易云音乐分享/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1893,7 +1548,7 @@
 <center>esp8266在物联网应用很多</center>
 
 <p>今天用它的一部分功能实现屏蔽周边网络的效果（断网神器）</p>
-<p><center> 【WIFI杀手（ESP8266）】</center><br><div id="dplayer13" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div></p><p>no url specified, no dplayer _(:3」∠)_</p><p></p>
+<p><center> 【WIFI杀手（ESP8266）】</center><br><div id="dplayer11" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer11"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/WIFI%E6%9D%80%E6%89%8B%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/wifi%E6%9D%80%E6%89%8B%E5%9B%BE%E7%89%87.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script></p>
 
           
         
@@ -2055,14 +1710,17 @@
 
       
         
-          
-            <p><center> 【Siri智能家电】</center><br>利用Wi-Fi继电器sonoff basic，并烧录ravencore固件，跨过Apple网关直连homekit。（实现Siri控制电器）   </p>
-<div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/wifi%E6%9D%80%E6%89%8B.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/WIFI%E6%9D%80%E6%89%8B.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-
-          
+          <p><center> 【Siri智能家电】</center><br>利用Wi-Fi继电器sonoff basic，并烧录ravencore固件，跨过Apple网关直连homekit。（实现Siri控制电器）<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/18/Siri智能家电/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
