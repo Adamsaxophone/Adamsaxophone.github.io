@@ -98,44 +98,29 @@
 
 
 
-<meta name="description" content="前言（python2的退休)  今天打开Python，本来想安装PIL（Python Imaging Library）用来处理图形，但是在python2.7环境下安装PIL后，提示安装失败，于是上Google寻找答案。PIL官网公共说明：PIL只支持python2.5、2.6、2.7，暂时不支持python3.X。但是python2即将寿终正寝，所以我干脆直接升级到最新版的python3.7.2，">
+<meta name="description" content="【自己搭建网盘的原因】     国内的个人网盘限速哇！！要充会员哇！！没钱哇！！！所以，自己用闲置的vps搭建一个私人网盘（不限速哦！）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图片识别·废铁段位">
-<meta property="og:url" content="http://yoursite.com/2019/01/26/python/index.html">
+<meta property="og:title" content="VPS搭建个人网盘">
+<meta property="og:url" content="http://yoursite.com/2019/02/04/搭建个人网盘/index.html">
 <meta property="og:site_name" content="大圣的博客">
-<meta property="og:description" content="前言（python2的退休)  今天打开Python，本来想安装PIL（Python Imaging Library）用来处理图形，但是在python2.7环境下安装PIL后，提示安装失败，于是上Google寻找答案。PIL官网公共说明：PIL只支持python2.5、2.6、2.7，暂时不支持python3.X。但是python2即将寿终正寝，所以我干脆直接升级到最新版的python3.7.2，">
+<meta property="og:description" content="【自己搭建网盘的原因】     国内的个人网盘限速哇！！要充会员哇！！没钱哇！！！所以，自己用闲置的vps搭建一个私人网盘（不限速哦！）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python2%E5%80%92%E8%AE%A1%E6%97%B6.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/pythone%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%89%8D.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E4%B8%AD.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%90%8E.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%BD%AF%E4%BB%B6%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0%20tessdata%20%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/tesseract%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/images.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/test.jpg?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%88%90%E6%9E%9C.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E9%94%99%E5%88%AB%E5%AD%97.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%9B%BE%E7%89%87%E9%87%8D%E5%91%BD%E5%90%8D.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%94%9F%E6%88%90box%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%9F%AB%E6%AD%A3.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%9F%AB%E6%AD%A3%E5%90%8E.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AE%AD%E7%BB%83tr%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%94%9F%E6%88%904%E4%B8%AA%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0cys%E5%89%8D%E7%BC%80.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%9E%8D%E5%90%88.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/cys%E5%AD%97%E5%BA%93.png?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%81%87.png?x-oss-process=style/mystyle">
-<meta property="og:updated_time" content="2019-02-01T14:47:35.462Z">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/%E5%B0%81%E9%9D%A2.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/1%E4%B9%B0%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/2ping.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/3%E6%90%AD%E5%BB%BA%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/4%E5%AE%9D%E5%A1%94%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/5%E7%99%BB%E9%99%86%E5%AE%9D%E5%A1%94%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/6%E5%AE%89%E8%A3%85LNMP%E7%8E%AF%E5%A2%83.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/7%E5%9F%9F%E5%90%8D%E6%95%B0%E6%8D%AE%E5%BA%93.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/8%E4%B8%8B%E8%BD%BDnextcloud%E5%AE%89%E8%A3%85%E5%8C%85.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/9%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/11%E4%BD%BF%E7%94%A8%E7%95%8C%E9%9D%A2.png">
+<meta property="og:updated_time" content="2019-02-05T11:07:09.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图片识别·废铁段位">
-<meta name="twitter:description" content="前言（python2的退休)  今天打开Python，本来想安装PIL（Python Imaging Library）用来处理图形，但是在python2.7环境下安装PIL后，提示安装失败，于是上Google寻找答案。PIL官网公共说明：PIL只支持python2.5、2.6、2.7，暂时不支持python3.X。但是python2即将寿终正寝，所以我干脆直接升级到最新版的python3.7.2，">
-<meta name="twitter:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python2%E5%80%92%E8%AE%A1%E6%97%B6.png?x-oss-process=style/mystyle">
+<meta name="twitter:title" content="VPS搭建个人网盘">
+<meta name="twitter:description" content="【自己搭建网盘的原因】     国内的个人网盘限速哇！！要充会员哇！！没钱哇！！！所以，自己用闲置的vps搭建一个私人网盘（不限速哦！）">
+<meta name="twitter:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/%E5%B0%81%E9%9D%A2.png">
 
 
 
@@ -165,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/26/python/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/04/搭建个人网盘/">
 
 
 
 
 
-  <title>图片识别·废铁段位 | 大圣的博客</title>
+  <title>VPS搭建个人网盘 | 大圣的博客</title>
   
 
 
@@ -288,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/26/python/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/04/搭建个人网盘/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="崔大圣">
@@ -305,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图片识别·废铁段位</h1>
+          <h1 class="post-title" itemprop="name headline">VPS搭建个人网盘</h1>
         
 
         <div class="post-meta">
@@ -317,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-26T15:55:32+08:00">
-                2019-01-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-04T15:04:58+08:00">
+                2019-02-04
               </time>
             
 
@@ -358,8 +343,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/26/python/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/26/python/" itemprop="commentCount"></span>
+                <a href="/2019/02/04/搭建个人网盘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/04/搭建个人网盘/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -367,7 +352,7 @@
 
           
           
-             <span id="/2019/01/26/python/" class="leancloud_visitors" data-flag-title="图片识别·废铁段位">
+             <span id="/2019/02/04/搭建个人网盘/" class="leancloud_visitors" data-flag-title="VPS搭建个人网盘">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -398,9 +383,50 @@
       
 
       
-        <p><font size="5"><strong>前言（python2的退休)</strong></font><br>  今天打开Python，本来想安装PIL（Python Imaging Library）用来处理图形，但是在python2.7环境下安装PIL后，提示安装失败，于是上Google寻找答案。PIL官网公共说明：PIL只支持python2.5、2.6、2.7，暂时不支持python3.X。但是python2即将寿终正寝，所以我干脆直接升级到最新版的python3.7.2，并使用pillow替代PIL。<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python2%E5%80%92%E8%AE%A1%E6%97%B6.png?x-oss-process=style/mystyle" alt=""><br> <a id="more"></a><br><br></p>
-<p><font size="5"><strong>python3的上岗</strong></font><br><br></p>
-<center><font color="#00f" size="3">更改将python27路径改为python37(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/pythone%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">查看python版本号，已升级为3.7.2(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/python%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>pip的更新</strong></font><br><br><br>pip 是一个安装和管理 Python 包的工具，python安装包的工具有easy_install, setuptools, pip，distribute。使用这些工具都能下载并安装django，而pip是easy_install的替代品。在CPython解释器，pypy解释器，可以很好地工作。首先升级pip：<br><center><font color="#00f" size="3">升级前(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%89%8D.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级中(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E4%B8%AD.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">升级后(下图)</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%8D%87%E7%BA%A7%E5%90%8E.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>安装依赖——pytesseract库、pillow库</strong></font><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>Windows安装Tesseract-OCR 4.00并配置环境变量</strong></font><br><br><br><a href="https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.00.00dev.exe" target="_blank" rel="noopener">Tesseract-OCR官网安装包链接</a><br>一路NEXT安装完成<br><br>配置系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%BD%AF%E4%BB%B6%E8%B7%AF%E5%BE%84.png?x-oss-process=style/mystyle" alt=""><br>添加 tessdata 系统变量<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0%20tessdata%20%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F.png?x-oss-process=style/mystyle" alt=""><br><br>最后查看tesseract版本，安装成功！<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/tesseract%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>先在CMD中，测试一下</strong></font><br><br><br><center><font color="#00f" size="3"><strong>先识别一个简单的数字图片（图片如下）</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/images.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>识别结果如下图</strong></font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""></center><br><center><font color="#00f" size="3"><strong>演示视频</strong></font></center><br><div id="dplayer17" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer17"),"theme":"#FADFA3","video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%9B%BE%E7%89%87%E8%AF%86%E5%88%AB%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%B0%81%E9%9D%A2.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br><br><font size="5"><strong>ORC中文识别</strong></font><br><br><br>目前Tesseract-OCR只能识别数字和英文<br>为了让它可以识别汉字，先下载<a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="noopener">chi_sim.traindata字库</a>，并下载<a href="https://github.com/tesseract-ocr/tesseract/wiki/Data-Files" target="_blank" rel="noopener">jTessBoxEditor</a>用来训练字库。<br>将chi_sim.traindata字库文件安装在Tesseract-OCR的tessdata文件下<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.png?x-oss-process=style/mystyle" alt=""><br><br><br>安装完成tesseract-ocr后，我们还需要做一些配置，在C:\Users\huxiu\AppData\Local\Programs\Python\Python35\Lib\site-packages\pytesseract找到pytesseract.py打开后做如下操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#CHANGE THIS IF TESSERACT IS NOT IN YOUR PATH, OR IS NAMED DIFFERENTLY   </span><br><span class="line">#tesseract_cmd = &apos;tesseract&apos;</span><br><span class="line">tesseract_cmd = &apos;C:/Program Files (x86)/Tesseract-OCR/tesseract.exe&apos;</span><br></pre></td></tr></table></figure><br><br><br><br><center><font color="#00f" size="3">找一个带文字的图片测试（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/test.jpg?x-oss-process=style/mystyle" alt=""></center><br><br><br><center><font color="#00f" size="3">pycharm进行识别（如下图）</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%88%90%E6%9E%9C.png?x-oss-process=style/mystyle" alt=""><br><br><br><center><font color="#00f" size="3">很明显，有识别错误，这个办法不完美（如下图）</font></center><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E9%94%99%E5%88%AB%E5%AD%97.png?x-oss-process=style/mystyle" alt=""></center><br><br><br><font size="5"><strong>JTessBoxEditorFX训练字库</strong></font><br>一定要选择FX版本，不然字库矫正时不支持中文汉字！！！<br>（1）利用JTessBoxEditorFX将图片重命名（方便box文件使用）<br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%9B%BE%E7%89%87%E9%87%8D%E5%91%BD%E5%90%8D.png?x-oss-process=style/mystyle" alt=""></center><br><br><br>（2）命令行新建Box文件<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%94%9F%E6%88%90box%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle" alt=""><br><br><br>（3）打开tif文件并矫正<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%9F%AB%E6%AD%A3.png?x-oss-process=style/mystyle" alt=""><br><br><br>（4）矫正完成<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%9F%AB%E6%AD%A3%E5%90%8E.png?x-oss-process=style/mystyle" alt=""><br><br><br><br>（5）命令行生成训练文件(训练自己的字库)<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%AE%AD%E7%BB%83tr%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle" alt=""><br><br><br><br>（6）输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unicharset_extractor cys.test.exp0.box</span><br></pre></td></tr></table></figure><br><br>生成unicharset文件并重命名为cys.unicharset<br><br><br><br>（7）命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo test 0 0 0 0 0 &gt;font_properties</span><br></pre></td></tr></table></figure><br><br>生成文件<br><br><br>(8)命令行输入<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mftraining -F font_properties -U cys.unicharset -O cys.unicharset cys.test.exp0.tr</span><br><span class="line">   </span><br><span class="line">cntraining cys.test.exp0.tr</span><br></pre></td></tr></table></figure><br><br>之后，会生成四个文件<br><br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E7%94%9F%E6%88%904%E4%B8%AA%E6%96%87%E4%BB%B6.png?x-oss-process=style/mystyle" alt=""></center><br><br><br>重命名这四个文件，分别在前面添加cys（即字库名）<br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E6%B7%BB%E5%8A%A0cys%E5%89%8D%E7%BC%80.png?x-oss-process=style/mystyle" alt=""></center><br><br><br><br><br>命令行输入combine_tessdata cys.生成cys.traineddata<br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E8%9E%8D%E5%90%88.png?x-oss-process=style/mystyle" alt=""></center><br><br><br>最后，将训练好的cys.traineddata放入C:\Program Files (x86)\Tesseract-OCR\tessdata的tessdata目录下<font color="#B22222" size="4">(我也是拥有属于自己字库的男人了！哈哈哈哈哈哈！) </font><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/cys%E5%AD%97%E5%BA%93.png?x-oss-process=style/mystyle" alt=""><br><br><br><font size="5"><strong>使用训练过的字库再次测试</strong></font><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.26/%E5%81%87.png?x-oss-process=style/mystyle" alt=""><br><center><font color="#B22222" size="5"><strong>成功!!!!!</strong></font></center>  
+        <p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/%E5%B0%81%E9%9D%A2.png" alt=""></p>
+<font size="4" color="#3CB371">【自己搭建网盘的原因】</font>   
+
+<p>国内的个人网盘限速哇！！要充会员哇！！没钱哇！！！<br>所以，自己用闲置的vps搭建一个私人网盘<font color="#dd22" size="3">（不限速哦！）</font><br><a id="more"></a></p>
+<p><font size="4" color="#3CB371">【搭建网盘步骤】</font>  </p>
+<center><font size="5" color="#dd22"> 国内vps需要备案！！注意！！</font></center><br>1.首先准备一台vps服务器(以阿里云学生机为例)<br><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/1%E4%B9%B0%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt=""></center>  
+
+<p>2.习惯性的ping一下服务器   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/2ping.png" alt=""></center>       
+
+<p>3.centos7下一键搭建宝塔面板   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/3%E6%90%AD%E5%BB%BA%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF.png" alt=""></center>    
+
+<p>4.宝塔面板搭建成功(得到登陆网站、用户名、初始密码)   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/4%E5%AE%9D%E5%A1%94%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F.png" alt=""></center>   
+
+<p>5.登陆宝塔面板   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/5%E7%99%BB%E9%99%86%E5%AE%9D%E5%A1%94%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF.png" alt=""></center>   
+
+<p>6.安装LNMP环境（注意：PHP版本必须5.6以上）   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/6%E5%AE%89%E8%A3%85LNMP%E7%8E%AF%E5%A2%83.png" alt=""></center>   
+
+<p>7.绑定域名、创建数据库<font color="#dd22">（国内域名需备案！）</font></p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/7%E5%9F%9F%E5%90%8D%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt=""></center>    
+
+<p>8.下载NextCloud安装包，并上传到VPS   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/8%E4%B8%8B%E8%BD%BDnextcloud%E5%AE%89%E8%A3%85%E5%8C%85.png" alt=""></center>   
+
+<p>9.VPS中安装好NextCloud后，登陆绑定的域名(登陆界面)   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/9%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png" alt=""></center>   
+
+<p>10.PC端使用界面   </p>
+<center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/11%E4%BD%BF%E7%94%A8%E7%95%8C%E9%9D%A2.png" alt=""></center>   
+
+<p><font size="4" color="#3CB371">【电脑手机同步演示视频】</font> </p>
+<center><font size="3" color="#dd22">实现将电脑上的视频，快速同步到手机，并在手机上下载</font></center>   
+
+<div id="dplayer14" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer14"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/%E7%BD%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/%E8%A7%86%E9%A2%91%E5%B0%81%E9%9D%A2.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>       
+<p><font size="4" color="#3CB371">【手机自动上传演示视频】</font> </p>
+<center><font size="3" color="#dd22">手机拍照后，只要打开软件，就会自动上传照片到云端，同时也会同步到电脑</font></center>   
+
+<div id="dplayer15" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer15"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/2.6%E7%BD%91%E7%9B%98/%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%B0%81%E9%9D%A2.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script> 
+<p><font size="4" color="#3CB371">【总结】</font><br>本次利用闲置VPS搭建的个人网盘，首先比较方便管理，其次它不限速，最后还有点小成就感，总的来说很实用。<font color="#dd22">容量方面，这个网盘容量20GB，作为平时上传文件是足够了；</font><font color="#008">流量方面,每月1024GB的流量更是用不完；</font><font color="#0ddw">功能方面，只需要点一下鼠标，就可以相互同步电脑、手机的照片视频；</font><font color="#DC143C">使用方面，手机app的自动上传照片功能，可以节省手机相册的空间，而且还不容易搞丢重要的照片和视频。</font></p>
+
       
     </div>
     
@@ -424,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/23/90后广告/" rel="next" title="90后的记忆（广告篇）">
-                <i class="fa fa-chevron-left"></i> 90后的记忆（广告篇）
+              <a href="/2019/02/04/VPS测试/" rel="next" title="VPS测试">
+                <i class="fa fa-chevron-left"></i> VPS测试
               </a>
             
           </div>
@@ -433,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/28/图片识别-百度api/" rel="prev" title="图片识别·青铜段位">
-                图片识别·青铜段位 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
