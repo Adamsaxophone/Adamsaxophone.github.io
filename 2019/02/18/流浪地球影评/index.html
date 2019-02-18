@@ -98,21 +98,36 @@
 
 
 
-<meta name="description" content="今天的主角——又是python">
+<meta name="description" content="此次爬虫背景2019年2月5日上映的3D电影《流浪地球》在国内上映。截至2月17日，《流浪地球》票房已达到36.51亿，超过《红海行动》的36.50亿，成为目前内地影史票房亚军，正在向内地影史票房冠军《战狼2》的56.8亿目标冲刺。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python爬取相亲网站">
-<meta property="og:url" content="http://yoursite.com/2019/02/13/python爬取相亲网站/index.html">
+<meta property="og:title" content="爬取流浪地球6万条影评">
+<meta property="og:url" content="http://yoursite.com/2019/02/18/流浪地球影评/index.html">
 <meta property="og:site_name" content="大圣的博客">
-<meta property="og:description" content="今天的主角——又是python">
+<meta property="og:description" content="此次爬虫背景2019年2月5日上映的3D电影《流浪地球》在国内上映。截至2月17日，《流浪地球》票房已达到36.51亿，超过《红海行动》的36.50亿，成为目前内地影史票房亚军，正在向内地影史票房冠军《战狼2》的56.8亿目标冲刺。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/%E5%B0%81%E9%9D%A2.png">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/1.png">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/2.png">
-<meta property="og:updated_time" content="2019-02-13T09:51:04.042Z">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%B0%81%E9%9D%A2.jpg">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%90%84%E8%AF%84%E5%88%86%E8%AE%A1%E6%95%B0.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%B9%B3%E5%9D%87%E5%88%86.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%90%84%E7%AD%89%E7%BA%A7%E7%94%A8%E6%88%B7%E5%8D%A0%E6%AF%94.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%90%84%E7%AD%89%E7%BA%A7%E7%94%A8%E6%88%B7%E5%B9%B3%E5%9D%87%E5%88%86.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%A7%82%E4%BC%97%E6%80%A7%E5%88%AB%E5%8D%A0%E6%AF%94.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%8C%AB%E7%9C%BC%E8%AF%8D%E4%BA%91.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%8C%AB%E7%9C%BC%E8%AF%8D%E4%BA%91.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E6%AF%8F%E4%B8%80%E9%A1%B5%E7%9A%84%E5%B7%AE%E5%88%AB.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%BD%91%E9%A1%B5json%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%B1%86%E7%93%A3%E7%88%AC%E5%8F%96500%E6%9D%A1.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%B1%86%E7%93%A3500%E6%9D%A1%E8%AF%8D%E4%BA%91.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%B1%86%E7%93%A3%E8%AF%8D%E4%BA%91.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%88%AC%E5%8F%966%E4%B8%87%E6%9D%A1%E5%BD%B1%E7%89%87.gif">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E9%80%9A%E8%BF%87MongoDB%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E4%B8%BAcsv.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%AF%84%E8%AE%BA%E5%86%85%E5%AE%B9.png">
+<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%8C%AB%E7%9C%BC%E8%AF%8D%E4%BA%91.png">
+<meta property="og:updated_time" content="2019-02-18T09:48:11.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python爬取相亲网站">
-<meta name="twitter:description" content="今天的主角——又是python">
-<meta name="twitter:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/%E5%B0%81%E9%9D%A2.png">
+<meta name="twitter:title" content="爬取流浪地球6万条影评">
+<meta name="twitter:description" content="此次爬虫背景2019年2月5日上映的3D电影《流浪地球》在国内上映。截至2月17日，《流浪地球》票房已达到36.51亿，超过《红海行动》的36.50亿，成为目前内地影史票房亚军，正在向内地影史票房冠军《战狼2》的56.8亿目标冲刺。">
+<meta name="twitter:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%B0%81%E9%9D%A2.jpg">
 
 
 
@@ -142,13 +157,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/13/python爬取相亲网站/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/18/流浪地球影评/">
 
 
 
 
 
-  <title>python爬取相亲网站 | 大圣的博客</title>
+  <title>爬取流浪地球6万条影评 | 大圣的博客</title>
   
 
 
@@ -158,7 +173,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+</head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -265,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/13/python爬取相亲网站/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/流浪地球影评/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="崔大圣">
@@ -282,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python爬取相亲网站</h1>
+          <h1 class="post-title" itemprop="name headline">爬取流浪地球6万条影评</h1>
         
 
         <div class="post-meta">
@@ -294,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-13T17:03:24+08:00">
-                2019-02-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T16:21:20+08:00">
+                2019-02-18
               </time>
             
 
@@ -335,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/13/python爬取相亲网站/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/python爬取相亲网站/" itemprop="commentCount"></span>
+                <a href="/2019/02/18/流浪地球影评/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/18/流浪地球影评/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -344,7 +359,7 @@
 
           
           
-             <span id="/2019/02/13/python爬取相亲网站/" class="leancloud_visitors" data-flag-title="python爬取相亲网站">
+             <span id="/2019/02/18/流浪地球影评/" class="leancloud_visitors" data-flag-title="爬取流浪地球6万条影评">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,13 +390,29 @@
       
 
       
-        <p><center><font color="#00f" size="4"><strong>今天的主角——又是python</strong></font></center></p>
-<p><center><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/%E5%B0%81%E9%9D%A2.png" alt=""></center><br><a id="more"></a></p>
-<h2 id="爬取对象"><a href="#爬取对象" class="headerlink" title="爬取对象"></a>爬取对象</h2><p>某同城交友网站上，有很多漂亮小姐姐的照片和个人信息，今天将她们的信息作为练习对象，爬取到本地。<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/1.png" alt=""></p>
-<h2 id="爬取信息项"><a href="#爬取信息项" class="headerlink" title="爬取信息项"></a>爬取信息项</h2><p>通过请求头，可以看到<font color="#dd22">年龄范围（startage，endage）</font>、<font color="#080">性别gender（1代表男，2代表女）</font>、<font color="#5F9EA0">城市cityid</font>、<font color="#B8860B">身高范围（startheight，endheight）</font>、<font color="#9400D3">婚姻状态（1代表未婚）</font>、<font color="#CD5C5C">学历education</font>、<font color="#7CFC00">薪资salary</font>这些信息。<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/2.png" alt=""></p>
-<h2 id="演示视频"><a href="#演示视频" class="headerlink" title="演示视频"></a>演示视频</h2><div id="dplayer12" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer12"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/1%20%281%29.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/2.13%20%E7%9B%B8%E4%BA%B2%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/1.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"> #coding=utf-8</span><br><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"> #设置条件</span><br><span class="line"> #解析网页</span><br><span class="line"> #年龄设置</span><br><span class="line">def query_age():</span><br><span class="line">    age = int(input(&apos;请输入对方的年龄（如:20）:&apos;))</span><br><span class="line">    if 21 &lt;= age &lt;= 30:</span><br><span class="line">        startage = 21</span><br><span class="line">        endage = 30</span><br><span class="line">    elif 31 &lt;= age &lt;= 40:</span><br><span class="line">        startage = 31</span><br><span class="line">        endage = 40</span><br><span class="line">    else:</span><br><span class="line">        startage = 0</span><br><span class="line">        endage = 0</span><br><span class="line">    return startage,endage</span><br><span class="line"></span><br><span class="line"> #性别设置</span><br><span class="line">def query_sex():</span><br><span class="line">    sex = input(&apos;请输入期望的性别(如:女):&apos;)</span><br><span class="line">    if sex == &apos;男&apos;:</span><br><span class="line">        gender = 1</span><br><span class="line">    else:</span><br><span class="line">        gender = 2</span><br><span class="line">    return gender</span><br><span class="line"></span><br><span class="line"> #身高设置</span><br><span class="line">def query_height():</span><br><span class="line">    height = int(input(&apos;请输入对方身高(如:165):&apos;))</span><br><span class="line">    if 151 &lt;= height &lt;= 160:</span><br><span class="line">        startheight = 151</span><br><span class="line">        endheight =160</span><br><span class="line">    elif 161 &lt;= height &lt;= 170:</span><br><span class="line">        startheight = 161</span><br><span class="line">        endheight = 170</span><br><span class="line">    elif 171 &lt;= height &lt;= 180:</span><br><span class="line">        startheight = 171</span><br><span class="line">        endheight = 180</span><br><span class="line">    elif 181 &lt;= height &lt;= 190:</span><br><span class="line">        startheight = 181</span><br><span class="line">        endheight =190</span><br><span class="line">    else:</span><br><span class="line">        startheight = 0</span><br><span class="line">        endheight = 0</span><br><span class="line">    return startheight,endheight</span><br><span class="line"></span><br><span class="line"> #薪水设置</span><br><span class="line">def query_money():</span><br><span class="line">    money = int(input(&apos;请输入期望的对方月薪(如:3000):&apos;))</span><br><span class="line">    if 2000 &lt;= money &lt;= 5000:</span><br><span class="line">        salary = 2</span><br><span class="line">    elif 5000 &lt;= money &lt;= 10000:</span><br><span class="line">        salary = 3</span><br><span class="line">    elif 10000 &lt;= money &lt;= 20000:</span><br><span class="line">        salary = 4</span><br><span class="line">    elif 20000 &lt;= money:</span><br><span class="line">        salary = 5</span><br><span class="line">    else:</span><br><span class="line">        salary = 0</span><br><span class="line">    return salary</span><br><span class="line"></span><br><span class="line"> #查询符合条件的数据</span><br><span class="line">def query_data():</span><br><span class="line">    print(&apos;请输入你期望对方的条件，开始搜查：&apos;)</span><br><span class="line">    #年龄</span><br><span class="line">    startage,endage = query_age()</span><br><span class="line">    #性别</span><br><span class="line">    gender = query_sex()</span><br><span class="line">    #身高</span><br><span class="line">    startheight,endheight =query_height()</span><br><span class="line">    #薪水</span><br><span class="line">    salary = query_money()</span><br><span class="line"></span><br><span class="line">    for i in range(1,11):</span><br><span class="line">        json = get_one(i,startage,endage,gender,startheight,endheight,salary)</span><br><span class="line">        print(json[&apos;data&apos;][&apos;list&apos;])</span><br><span class="line">        for item in json[&apos;data&apos;][&apos;list&apos;]:</span><br><span class="line">            #保存图片</span><br><span class="line">            save_image(item)</span><br><span class="line">            #保存个人信息</span><br><span class="line">            save_info(item)</span><br><span class="line"></span><br><span class="line">def save_info(item):</span><br><span class="line">    with open(&apos;girlinfo/&apos;+item[&apos;username&apos;]+&apos;.txt&apos;, &apos;w&apos;, encoding=&apos;utf-8&apos;)as f:</span><br><span class="line">        f.write(&apos;昵称：&apos;+item[&apos;username&apos;]+&apos;\n城市：&apos;+item[&apos;city&apos;]+&apos;\n身高：&apos;+item[&apos;height&apos;]+&apos;\n个性签名：&apos;+item[&apos;monolog&apos;]+&apos;\n学历：&apos;+item[&apos;education&apos;])</span><br><span class="line"></span><br><span class="line">def save_image(item):</span><br><span class="line">    if not os.path.exists(&apos;images&apos;):</span><br><span class="line">        os.mkdir(&apos;images&apos;)</span><br><span class="line">    image_url = item[&apos;avatar&apos;]</span><br><span class="line">    response = requests.get(image_url)</span><br><span class="line">    if response.status_code == 200:</span><br><span class="line">        file_path = &apos;images/&#123;&#125;.jpg&apos;.format(item[&apos;username&apos;])</span><br><span class="line">        if not os.path.exists(file_path):</span><br><span class="line">            print(&apos;正在获取:%s的信息&apos;%item[&apos;username&apos;])</span><br><span class="line">            with open(file_path,&apos;wb&apos;)as f:</span><br><span class="line">                #获取图片内容</span><br><span class="line">                f.write(response.content)</span><br><span class="line">    else:</span><br><span class="line">        print(&apos;已经保存过当前信息&apos;)</span><br><span class="line"> #接收参数 返回json数据</span><br><span class="line">def get_one(page,startage,endage,gender,startheight,endheight,salary):</span><br><span class="line">    headers = &#123;</span><br><span class="line">        &apos;Referer&apos;: &apos;http: // www.7799520.com / jiaoyou.html&apos;,</span><br><span class="line">        &apos;User - Agent&apos;: &apos;Mozilla / 5.0(Windows NT 10.0;Win64;x64) AppleWebKit / 537.36(KHTML, likeGecko) Chrome / 71.0.3578.98 Safari / 537.36&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    base_url = &apos;http://www.7799520.com/api/user/pc/list/search?startage=&#123;&#125;&amp;endage=&#123;&#125;&amp;gender=&#123;&#125;&amp;cityid=321&amp;startheight=&#123;&#125;&amp;endheight=&#123;&#125;&amp;marry=1&amp;education=30&amp;salary=&#123;&#125;&amp;page=&#123;&#125;&apos;.format(startage,endage,gender,startheight,endheight,salary,page)</span><br><span class="line">    while True:</span><br><span class="line">         try:</span><br><span class="line">             response = requests.get(base_url, headers=headers)</span><br><span class="line">             if response.status_code == 200:</span><br><span class="line">                 return response.json()</span><br><span class="line"></span><br><span class="line">         except:</span><br><span class="line">             return  None</span><br><span class="line"></span><br><span class="line">query_data()</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1.最开始使用python2.x版本，导致input无法输入汉字。（解决办法：使用python3.x后，问题解决）<br><br><br>2.程序还有漏洞！爬取的信息存储在images&amp;girlinfo文件下（如：E:\py项目\findgirls\girlinfo\Alisa168.txt），但是当某用户的昵称中包含“\”字符时，程序会报错终止，因为文件是以用户的昵称命名的（如：Alisa168），当昵称中包含“\”时，必定会导致找不到文件，从而报错。<br><br><br>3.第一次使用requests、os库，感觉爬取网页信息时很方便。</p>
+        <h2 id="此次爬虫背景"><a href="#此次爬虫背景" class="headerlink" title="此次爬虫背景"></a>此次爬虫背景</h2><p>2019年2月5日上映的3D电影《流浪地球》在国内上映。截至2月17日，《流浪地球》票房已达到36.51亿，超过《红海行动》的36.50亿，成为目前内地影史票房亚军，正在向内地影史票房冠军《战狼2》的56.8亿目标冲刺。<br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%B0%81%E9%9D%A2.jpg" alt=""><br><a id="more"></a></p>
+<h2 id="我想做什么"><a href="#我想做什么" class="headerlink" title="我想做什么"></a>我想做什么</h2><p>关于《流浪地球》，网友褒贬不一，有人大声叫好，有人大骂吴京……<br>我想知道这个电影到底怎么样，使用决定用python爬取猫眼电影近7天的6万条影评数据，来看看大家都在说什么。   </p>
+<p><center><font color="#dd22" size="4">毕竟，实践出真知！哈哈哈哈哈</font></center></p>
+<h2 id="先来展示成果-数据可视化"><a href="#先来展示成果-数据可视化" class="headerlink" title="先来展示成果(数据可视化)"></a>先来展示成果(数据可视化)</h2><p><center><font color="#dd22" size="5">以下图表均由61606条影评分析得到</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%90%84%E8%AF%84%E5%88%86%E8%AE%A1%E6%95%B0.png" alt=""></p>
+<p><center><font color="#dd22">如上图，给10分的人数最多，很少有人给8分一下</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%B9%B3%E5%9D%87%E5%88%86.png" alt=""></p>
+<p><center><font color="#dd22">如上图，流浪地球的评价得分是9.217分</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%90%84%E7%AD%89%E7%BA%A7%E7%94%A8%E6%88%B7%E5%8D%A0%E6%AF%94.png" alt=""></p>
+<p><center><font color="#dd22">如上图，这6万条影评发布者，主要是等级为2、3、4的猫眼用户</font></center><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E5%90%84%E7%AD%89%E7%BA%A7%E7%94%A8%E6%88%B7%E5%B9%B3%E5%9D%87%E5%88%86.png" alt=""></p>
+<p><center><font color="#dd22">如上图，不同等级的用户所给的分数也不同</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%A7%82%E4%BC%97%E6%80%A7%E5%88%AB%E5%8D%A0%E6%AF%94.png" alt=""></p>
+<p><center><font color="#dd22">如上图，38%为男性观众、37%为女性观众、剩下25%的观众未设置性别</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%8C%AB%E7%9C%BC%E8%AF%8D%E4%BA%91.png" alt=""></p>
+<p><center><font color="#dd22">如上图，是这6万条影评中被提及到的词语（被引用次数越多，字越大）</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%8C%AB%E7%9C%BC%E8%AF%8D%E4%BA%91.png" alt=""></p>
+<p><center><font color="#dd22">如上图，被引用次数最多的10个词（好看、中国、不错、好、特效、科幻片、震撼、国产、科幻、非常），其中“好看”被引用19042次，被大家普遍提及。</font></center><br><br></p>
+<h2 id="第一次尝试（爬取豆瓣影评）"><a href="#第一次尝试（爬取豆瓣影评）" class="headerlink" title="第一次尝试（爬取豆瓣影评）"></a>第一次尝试（爬取豆瓣影评）</h2><p><center><font color="#ff88" size="4">篇幅有限，这里只是简单记录一下思路吧！</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E6%AF%8F%E4%B8%80%E9%A1%B5%E7%9A%84%E5%B7%AE%E5%88%AB.png" alt=""></p>
+<p><center>首先，登陆网页版猫眼电影，F12开发者模式中选择移动端模式（箭头所指），因为网页版只能显示10条影评。影评有很多页，每次翻页后，XHR中就会出现一条JSON数据（如上图），offset代表偏移量，以此时此刻为基准点，每翻一页，offset值就会加15，所以可以利用此规律模拟cookie登陆网站爬取JSON数据。</center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%BD%91%E9%A1%B5json%E6%95%B0%E6%8D%AE.png" alt=""></p>
+<p><center>如上图，每条JSON数据包中，就可以得到我们想要的数据（评论者的昵称、性别、账号ID、评论内容、评论时间等）</center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%B1%86%E7%93%A3%E7%88%AC%E5%8F%96500%E6%9D%A1.png" alt=""></p>
+<p><center>起初，爬取豆瓣影评，发现豆瓣只给500条影评……（500条数据，能干什么啊）</center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%B1%86%E7%93%A3500%E6%9D%A1%E8%AF%8D%E4%BA%91.png" alt=""><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%B1%86%E7%93%A3%E8%AF%8D%E4%BA%91.png" alt=""></p>
+<p><center>如上图，通过jieba、pandas等第三方包分析出这500条影评中，出现次数最多的词语</center></p>
+<h2 id="第二次尝试（爬取猫眼影评）"><a href="#第二次尝试（爬取猫眼影评）" class="headerlink" title="第二次尝试（爬取猫眼影评）"></a>第二次尝试（爬取猫眼影评）</h2><p><center><font color="#dd22" size="4">第二次，我选择爬取猫眼电影近7天的影评，并得到6万条影评数据</font></center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%88%AC%E5%8F%966%E4%B8%87%E6%9D%A1%E5%BD%B1%E7%89%87.gif" alt=""></p>
+<p><center>如上图，爬取2月10日——2月17日的数据（耗时1+小时）</center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E9%80%9A%E8%BF%87MongoDB%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96.png" alt=""></p>
+<p><center>利用MongoDB采集数据（共61606条影评）</center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E4%B8%BAcsv.png" alt=""></p>
+<p><center>将数据导出为CSV，用excel2019打开，利用excel将数据可视化</center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E8%AF%84%E8%AE%BA%E5%86%85%E5%AE%B9.png" alt=""></p>
+<p><center>评论内容单独导出，准备用python制作词云</center><br><br><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/2.18%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E7%88%AC%E8%99%AB/%E7%8C%AB%E7%9C%BC%E8%AF%8D%E4%BA%91.png" alt=""></p>
+<p><center>可以看到，被引用次数最多的10个词（好看、中国、不错、好、特效、科幻片、震撼、国产、科幻、非常），其中“好看”被引用19042次，被大家普遍提及。</center></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>第一次爬取这么多数据，耗时2天，不断地遇到新的问题。爬取网页时，因为短时间内频繁访问猫眼网站，被网站拒绝访问过；二次安装MongoDB运行环境时，总是无法关闭MongoDB Service；数据存到MongoDB中时，突然出现【TimeOutError10061】连接不到主机；准备利用阿里云DataV进行数据可视化，然后发现提交的CSV文件不能超过512KB（我的CSV有6MB）……总之，我的想法算是实现啦，哈哈哈哈哈哈哈哈，开心！</p>
 
       
     </div>
@@ -406,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/07/迅雷破解/" rel="next" title="迅雷SVIP">
-                <i class="fa fa-chevron-left"></i> 迅雷SVIP
+              <a href="/2019/02/13/python爬取相亲网站/" rel="next" title="python爬取相亲网站">
+                <i class="fa fa-chevron-left"></i> python爬取相亲网站
               </a>
             
           </div>
@@ -415,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/18/流浪地球影评/" rel="prev" title="爬取流浪地球6万条影评">
-                爬取流浪地球6万条影评 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -574,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#爬取对象"><span class="nav-number">1.</span> <span class="nav-text">爬取对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬取信息项"><span class="nav-number">2.</span> <span class="nav-text">爬取信息项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#演示视频"><span class="nav-number">3.</span> <span class="nav-text">演示视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码部分"><span class="nav-number">4.</span> <span class="nav-text">代码部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#此次爬虫背景"><span class="nav-number">1.</span> <span class="nav-text">此次爬虫背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我想做什么"><span class="nav-number">2.</span> <span class="nav-text">我想做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先来展示成果-数据可视化"><span class="nav-number">3.</span> <span class="nav-text">先来展示成果(数据可视化)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一次尝试（爬取豆瓣影评）"><span class="nav-number">4.</span> <span class="nav-text">第一次尝试（爬取豆瓣影评）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二次尝试（爬取猫眼影评）"><span class="nav-number">5.</span> <span class="nav-text">第二次尝试（爬取猫眼影评）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
