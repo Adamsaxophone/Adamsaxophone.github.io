@@ -98,17 +98,17 @@
 
 
 
-<meta name="description" content="全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。">
+<meta name="description" content="网上一篇很好的文章，全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《编译原理》LL文法">
 <meta property="og:url" content="http://yoursite.com/2019/03/03/《编译原理》LL文法/index.html">
 <meta property="og:site_name" content="大圣的博客">
-<meta property="og:description" content="全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。">
+<meta property="og:description" content="网上一篇很好的文章，全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-03T11:59:47.924Z">
+<meta property="og:updated_time" content="2019-03-03T12:05:11.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《编译原理》LL文法">
-<meta name="twitter:description" content="全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。">
+<meta name="twitter:description" content="网上一篇很好的文章，全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。">
 
 
 
@@ -371,7 +371,7 @@
       
 
       
-        <p><center><font color="#0080" size="5">全文引自<a href="https://azhuge233.com" target="_blank" rel="noopener">https://azhuge233.com</a></font></center></p>
+        <p><center><font color="#0080" size="6">网上一篇很好的文章，全文引自<a href="https://azhuge233.com" target="_blank" rel="noopener">https://azhuge233.com</a></font></center></p>
 <font color="#dd22" size="4">梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。</font>
 
 <h2 id="1-FIRST集的构造方法"><a href="#1-FIRST集的构造方法" class="headerlink" title="1.FIRST集的构造方法"></a>1.FIRST集的构造方法</h2><p>·以个人的理解，求FIRST集一句话概括即：<font color="#dd22">推导时，每个非终结符的第一个终结符 的集合。</font>实际上，理解了这句话大可不必记公式。<br>·在求FIRST集的过程中，<font color="#dd22">重点观察产生式右部的第一个字符。</font><br><a id="more"></a><br>·如果给定一个文法，它的文法形式可能有以下三种（大写字母为非终结符，小写字母为终结符，ε为空串）：<br>(1)A -&gt; a<br>·开头直接就是终结符的情况，直接把此非终结符加入FIRST(A)。<br>(2)A -&gt; ε<br>·空串开头的情况，直接把空串加入FIRST(A)。<br>(3)A -&gt; B···<br>·以非终结符开头，后面存在 终结符或者非终结符 的情况，需要先将非终结符B的FIRST集求出来，然后由FIRST(B)分为包含或不包含空串ε的两种情况讨论：<br> (3.1)若FIRST(B)中不包含空串ε，则将FIRST(B)的所有元素加入FIRST(A)，不考察接下来的非终结符和终结符。<br> (3.2)若FIRST(B)包含空串ε，则将FIRST(B)除ε外的所有元素加入FIRST(A)，接着求FIRST(C)、FIRST(D)……并将其FIRST集除ε外的元素加入FIRST(A)，直到接下来的非终结符的FIRST集不包含ε。如果推到最后一位为终结符，则将终结符加入FIRST集。<br>·这种情况很好理解，因为如果将A推导为B，那么B推导出的第一个字母即为A的第一个字母。但是假如B可以推导为空串ε，那么就需要后面的非终结符提供终结符（产生A的第一个终结符的重任就交给了B后面的非终结符），所以要考察后继非终结符的FIRST集。<br> 如果把构造FIRST集的过程写成递归函数，其回溯条件即：<br>if ( ‘ε’ not in FIRST(非终结符)  || this is a 终结符 ) return;</p>
