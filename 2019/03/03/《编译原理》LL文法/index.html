@@ -98,29 +98,17 @@
 
 
 
-<meta name="description" content="console.error(&quot;TypeError: Cannot read property &apos;_id&apos; of undefined&quot;); 			     边听音乐，边看照片，何乐而不为？     2017.4摄于南京·雨花台">
+<meta name="description" content="全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。·如果给定一个文法，它的文法形式可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【人像篇】">
-<meta property="og:url" content="http://yoursite.com/2019/01/21/人像照片/index.html">
+<meta property="og:title" content="《编译原理》LL文法">
+<meta property="og:url" content="http://yoursite.com/2019/03/03/《编译原理》LL文法/index.html">
 <meta property="og:site_name" content="大圣的博客">
-<meta property="og:description" content="console.error(&quot;TypeError: Cannot read property &apos;_id&apos; of undefined&quot;); 			     边听音乐，边看照片，何乐而不为？     2017.4摄于南京·雨花台">
+<meta property="og:description" content="全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。·如果给定一个文法，它的文法形式可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/10.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/0.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/1.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/2.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/3.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/4.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/5.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/6.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/7.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/8.JPG?x-oss-process=style/mystyle">
-<meta property="og:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/9.JPG?x-oss-process=style/mystyle">
-<meta property="og:updated_time" content="2019-02-01T14:45:02.254Z">
+<meta property="og:updated_time" content="2019-03-03T11:58:23.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【人像篇】">
-<meta name="twitter:description" content="console.error(&quot;TypeError: Cannot read property &apos;_id&apos; of undefined&quot;); 			     边听音乐，边看照片，何乐而不为？     2017.4摄于南京·雨花台">
-<meta name="twitter:image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/10.JPG?x-oss-process=style/mystyle">
+<meta name="twitter:title" content="《编译原理》LL文法">
+<meta name="twitter:description" content="全文引自https://azhuge233.com 梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。  1.FIRST集的构造方法·以个人的理解，求FIRST集一句话概括即：推导时，每个非终结符的第一个终结符 的集合。实际上，理解了这句话大可不必记公式。·在求FIRST集的过程中，重点观察产生式右部的第一个字符。·如果给定一个文法，它的文法形式可">
 
 
 
@@ -150,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/21/人像照片/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/03/《编译原理》LL文法/">
 
 
 
 
 
-  <title>【人像篇】 | 大圣的博客</title>
+  <title>《编译原理》LL文法 | 大圣的博客</title>
   
 
 
@@ -273,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/21/人像照片/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/《编译原理》LL文法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="崔大圣">
@@ -290,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【人像篇】</h1>
+          <h1 class="post-title" itemprop="name headline">《编译原理》LL文法</h1>
         
 
         <div class="post-meta">
@@ -302,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-21T17:56:34+08:00">
-                2019-01-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-03T19:43:17+08:00">
+                2019-03-03
               </time>
             
 
@@ -325,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/大圣的影集/" itemprop="url" rel="index">
-                    <span itemprop="name">大圣的影集</span>
+                  <a href="/categories/CS学习日志/" itemprop="url" rel="index">
+                    <span itemprop="name">CS学习日志</span>
                   </a>
                 </span>
 
@@ -343,8 +331,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/21/人像照片/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/21/人像照片/" itemprop="commentCount"></span>
+                <a href="/2019/03/03/《编译原理》LL文法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/03/《编译原理》LL文法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -352,7 +340,7 @@
 
           
           
-             <span id="/2019/01/21/人像照片/" class="leancloud_visitors" data-flag-title="【人像篇】">
+             <span id="/2019/03/03/《编译原理》LL文法/" class="leancloud_visitors" data-flag-title="《编译原理》LL文法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,22 +371,12 @@
       
 
       
-        
-			<script>
-				console.error("TypeError: Cannot read property '_id' of undefined");
-			</script>    
-<center><font color="#00f" size="4"><strong>边听音乐，边看照片，何乐而不为？</strong></font></center>   
+        <p><center><font color="#0080" size="5">全文引自<a href="https://azhuge233.com" target="_blank" rel="noopener">https://azhuge233.com</a></font></center></p>
+<font color="#dd22" size="4">梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。</font>
 
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/10.JPG?x-oss-process=style/mystyle" alt=""><center>2017.4摄于<font color="#DC143C">南京·雨花台</font></center><br> <a id="more"></a><br><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/0.JPG?x-oss-process=style/mystyle" alt=""><center>2003.7摄于<font color="#DC143C">南京·雨花台</font></center>    </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/1.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">广州·红砖厂</font></center>     </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/2.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">广州·红砖厂</font></center>   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/3.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">广州·广州塔顶楼</font></center>    </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/4.JPG?x-oss-process=style/mystyle" alt=""><center>2017.10摄于<font color="#DC143C">南京·夫子庙</font></center>    </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/5.JPG?x-oss-process=style/mystyle" alt=""><center>2018.2摄于<font color="#DC143C">重庆·四川美术学院</font></center>   </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/6.JPG?x-oss-process=style/mystyle" alt=""><center>2018.4摄于<font color="#DC143C">济南·黑龙潭</font></center>    </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/7.JPG?x-oss-process=style/mystyle" alt=""><center>2018.8摄于<font color="#DC143C">丽江·丽江古城</font></center>      </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/8.JPG?x-oss-process=style/mystyle" alt="">   <center>2018.8摄于<font color="#DC143C">昆明·昆明大学</font></center>      </p>
-<p><img src="https://treedyson.oss-cn-beijing.aliyuncs.com/1.21/9.JPG?x-oss-process=style/mystyle" alt=""><center>2018.8摄于<font color="#DC143C">丽江·丽江市政府</font></center></p>
+<h2 id="1-FIRST集的构造方法"><a href="#1-FIRST集的构造方法" class="headerlink" title="1.FIRST集的构造方法"></a>1.FIRST集的构造方法</h2><p>·以个人的理解，求FIRST集一句话概括即：<font color="#dd22">推导时，每个非终结符的第一个终结符 的集合。</font>实际上，理解了这句话大可不必记公式。<br>·在求FIRST集的过程中，<font color="#dd22">重点观察产生式右部的第一个字符。</font><br>·如果给定一个文法，它的文法形式可能有以下三种（大写字母为非终结符，小写字母为终结符，ε为空串）：<br>(1)A -&gt; a<br>·开头直接就是终结符的情况，直接把此非终结符加入FIRST(A)。<br>(2)A -&gt; ε<br>·空串开头的情况，直接把空串加入FIRST(A)。<br>(3)A -&gt; B···<br>·以非终结符开头，后面存在 终结符或者非终结符 的情况，需要先将非终结符B的FIRST集求出来，然后由FIRST(B)分为包含或不包含空串ε的两种情况讨论：<br> (3.1)若FIRST(B)中不包含空串ε，则将FIRST(B)的所有元素加入FIRST(A)，不考察接下来的非终结符和终结符。<br> (3.2)若FIRST(B)包含空串ε，则将FIRST(B)除ε外的所有元素加入FIRST(A)，接着求FIRST(C)、FIRST(D)……并将其FIRST集除ε外的元素加入FIRST(A)，直到接下来的非终结符的FIRST集不包含ε。如果推到最后一位为终结符，则将终结符加入FIRST集。<br>·这种情况很好理解，因为如果将A推导为B，那么B推导出的第一个字母即为A的第一个字母。但是假如B可以推导为空串ε，那么就需要后面的非终结符提供终结符（产生A的第一个终结符的重任就交给了B后面的非终结符），所以要考察后继非终结符的FIRST集。<br> 如果把构造FIRST集的过程写成递归函数，其回溯条件即：<br>if ( ‘ε’ not in FIRST(非终结符)  || this is a 终结符 ) return;</p>
+<h2 id="FOLLOW集的构造方法"><a href="#FOLLOW集的构造方法" class="headerlink" title="FOLLOW集的构造方法"></a>FOLLOW集的构造方法</h2><p>·以个人理解，求FOLLOW集即：<font color="#dd22">推导时，每个非终结符的后一个终结符的集合。</font><br>·构造FOLLOW集的过程中，需要用到FIRST集（因此先求FIRST再求FOLLOW）。需要重点关注产生式右部中对应的非终结符的后一个字符。<br>·构造过程开始前，要首先将 ‘#’后随符 加入开始符号的FOLLOW集中，这是规定。<br>·同样的，FOLLOW集也分以下几种情况（求B的FOLLOW集）：<br>1.A -&gt; Ba<br>·这种情况最简单，由于B后面紧跟的是终结符，所以直接将a加入FOLLOW(B)。<br>2.A -&gt; …BC…<br>·B后紧跟非终结符C，这种情况下，将C的FIRST集中除ε外的元素加入FOLLOW(B)。<br>·这种情况很好理解，要求B后的一个字符，就是求C的第一个字符，即C的FIRST集。但若C是空串，即B后没有字符，所以去掉FIRST(C)中的空串ε。<br>3.A  -&gt; …B 或 A -&gt; …BC<br>·求B的FOLLOW集<br>（1）B是最后一位。<br>·只需把FOLLOW(A)加入FOLLOW(B)即可。<br>（2）B后只有一个非终结符C并且FIRST(C)中有空串ε。<br>·这时除了将FIRST(C)除ε外的元素加入FOLLOW(B)外，还需将FOLLOW(A)加入FOLLOW(B)<br>·这种情况下，如果B结尾，那么B的FOLLOW集和A的FOLLOW集其实是等价的，所以将FOLLOW(A)加入FOLLOW(B)；如果B后还存在一个C，C还可以推为空串，那么可以看作C不存在，结果还是与B结尾相同的。</p>
+<h2 id="LL-1-分析表的构造"><a href="#LL-1-分析表的构造" class="headerlink" title="LL(1)分析表的构造"></a>LL(1)分析表的构造</h2><p>·LL(1)分析表的列标题为终结符（即一个终结符为一列），行标题为非终结符（即一个非终结符为一行），内容为文法的产生式。<br><br><br>·按照FIRST、FOLLOW集，将产生式入表，具体方法为：<br>·确定一个非终结符<br>·在该非终结符的FIRST集中拿出一个终结符<br>·找到该终结符在文法中出现的产生式<br>·以选中的非终结符为行，选中的终结符为列，将该产生式填入表格<br><br><br>·如果遇到FIRST集中存在空串ε，那么：<br>确定出现空串的非终结符<br>考察此非终结符的FOLLOW集<br>对于FOLLOW集中的每个元素，以元素为列，此非终结符为行，填入形如【非终结符 -&gt; ε】的产生式</p>
 
       
     </div>
@@ -423,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/21/美食照片/" rel="next" title="【美食篇】">
-                <i class="fa fa-chevron-left"></i> 【美食篇】
+              <a href="/2019/02/22/流浪地球影评/" rel="next" title="爬取流浪地球13万条影评">
+                <i class="fa fa-chevron-left"></i> 爬取流浪地球13万条影评
               </a>
             
           </div>
@@ -432,10 +410,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/23/VIP视频/" rel="prev" title="如何优雅地观看VIP视频">
-                如何优雅地观看VIP视频 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -490,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -572,6 +555,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-FIRST集的构造方法"><span class="nav-number">1.</span> <span class="nav-text">1.FIRST集的构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FOLLOW集的构造方法"><span class="nav-number">2.</span> <span class="nav-text">FOLLOW集的构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LL-1-分析表的构造"><span class="nav-number">3.</span> <span class="nav-text">LL(1)分析表的构造</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -261,6 +261,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/《编译原理》LL文法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔大圣">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.1/%E5%A4%B4%E5%83%8F.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大圣的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/03/《编译原理》LL文法/" itemprop="url">《编译原理》LL文法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-03T19:43:17+08:00">
+                2019-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS学习日志/" itemprop="url" rel="index">
+                    <span itemprop="name">CS学习日志</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/03/《编译原理》LL文法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/03/《编译原理》LL文法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/03/《编译原理》LL文法/" class="leancloud_visitors" data-flag-title="《编译原理》LL文法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><center><font color="#0080" size="5">全文引自<a href="https://azhuge233.com" target="_blank" rel="noopener">https://azhuge233.com</a></font></center></p>
+<font color="#dd22" size="4">梳理一下 LL(1)分析表的构造方法 以及与之相关的 FIRST集 和 FOLLOW集 的构造方法。</font>
+
+<h2 id="1-FIRST集的构造方法"><a href="#1-FIRST集的构造方法" class="headerlink" title="1.FIRST集的构造方法"></a>1.FIRST集的构造方法</h2><p>·以个人的理解，求FIRST集一句话概括即：<font color="#dd22">推导时，每个非终结符的第一个终结符 的集合。</font>实际上，理解了这句话大可不必记公式。<br>·在求FIRST集的过程中，<font color="#dd22">重点观察产生式右部的第一个字符。</font><br>·如果给定一个文法，它的文法形式可能有以下三种（大写字母为非终结符，小写字母为终结符，ε为空串）：<br>(1)A -&gt; a<br>·开头直接就是终结符的情况，直接把此非终结符加入FIRST(A)。<br>(2)A -&gt; ε<br>·空串开头的情况，直接把空串加入FIRST(A)。<br>(3)A -&gt; B···<br>·以非终结符开头，后面存在 终结符或者非终结符 的情况，需要先将非终结符B的FIRST集求出来，然后由FIRST(B)分为包含或不包含空串ε的两种情况讨论：<br> (3.1)若FIRST(B)中不包含空串ε，则将FIRST(B)的所有元素加入FIRST(A)，不考察接下来的非终结符和终结符。<br> (3.2)若FIRST(B)包含空串ε，则将FIRST(B)除ε外的所有元素加入FIRST(A)，接着求FIRST(C)、FIRST(D)……并将其FIRST集除ε外的元素加入FIRST(A)，直到接下来的非终结符的FIRST集不包含ε。如果推到最后一位为终结符，则将终结符加入FIRST集。<br>·这种情况很好理解，因为如果将A推导为B，那么B推导出的第一个字母即为A的第一个字母。但是假如B可以推导为空串ε，那么就需要后面的非终结符提供终结符（产生A的第一个终结符的重任就交给了B后面的非终结符），所以要考察后继非终结符的FIRST集。<br> 如果把构造FIRST集的过程写成递归函数，其回溯条件即：<br>if ( ‘ε’ not in FIRST(非终结符)  || this is a 终结符 ) return;</p>
+<h2 id="FOLLOW集的构造方法"><a href="#FOLLOW集的构造方法" class="headerlink" title="FOLLOW集的构造方法"></a>FOLLOW集的构造方法</h2><p>·以个人理解，求FOLLOW集即：<font color="#dd22">推导时，每个非终结符的后一个终结符的集合。</font><br>·构造FOLLOW集的过程中，需要用到FIRST集（因此先求FIRST再求FOLLOW）。需要重点关注产生式右部中对应的非终结符的后一个字符。<br>·构造过程开始前，要首先将 ‘#’后随符 加入开始符号的FOLLOW集中，这是规定。<br>·同样的，FOLLOW集也分以下几种情况（求B的FOLLOW集）：<br>1.A -&gt; Ba<br>·这种情况最简单，由于B后面紧跟的是终结符，所以直接将a加入FOLLOW(B)。<br>2.A -&gt; …BC…<br>·B后紧跟非终结符C，这种情况下，将C的FIRST集中除ε外的元素加入FOLLOW(B)。<br>·这种情况很好理解，要求B后的一个字符，就是求C的第一个字符，即C的FIRST集。但若C是空串，即B后没有字符，所以去掉FIRST(C)中的空串ε。<br>3.A  -&gt; …B 或 A -&gt; …BC<br>·求B的FOLLOW集<br>（1）B是最后一位。<br>·只需把FOLLOW(A)加入FOLLOW(B)即可。<br>（2）B后只有一个非终结符C并且FIRST(C)中有空串ε。<br>·这时除了将FIRST(C)除ε外的元素加入FOLLOW(B)外，还需将FOLLOW(A)加入FOLLOW(B)<br>·这种情况下，如果B结尾，那么B的FOLLOW集和A的FOLLOW集其实是等价的，所以将FOLLOW(A)加入FOLLOW(B)；如果B后还存在一个C，C还可以推为空串，那么可以看作C不存在，结果还是与B结尾相同的。</p>
+<h2 id="LL-1-分析表的构造"><a href="#LL-1-分析表的构造" class="headerlink" title="LL(1)分析表的构造"></a>LL(1)分析表的构造</h2><p>·LL(1)分析表的列标题为终结符（即一个终结符为一列），行标题为非终结符（即一个非终结符为一行），内容为文法的产生式。<br><br><br>·按照FIRST、FOLLOW集，将产生式入表，具体方法为：<br>·确定一个非终结符<br>·在该非终结符的FIRST集中拿出一个终结符<br>·找到该终结符在文法中出现的产生式<br>·以选中的非终结符为行，选中的终结符为列，将该产生式填入表格<br><br><br>·如果遇到FIRST集中存在空串ε，那么：<br>确定出现空串的非终结符<br>考察此非终结符的FOLLOW集<br>对于FOLLOW集中的每个元素，以元素为列，此非终结符为行，填入形如【非终结符 -&gt; ε】的产生式</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/流浪地球影评/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -712,7 +880,7 @@
           
             <center><font color="#dd22" size="4">怎样在电脑上拥有“迅雷SVIP”？ 来看一下视频吧！</font></center>    
 
-<center> 【演示视频】</center><br><div id="dplayer19" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer19"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E8%BF%85%E9%9B%B7%E7%A0%B4%E8%A7%A3.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E8%BF%85%E9%9B%B7.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br><br><center><font size="5"><a href="https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E8%BF%85%E9%9B%B7SVIP.zip" target="_blank" rel="noopener">点这里，获取破解软件</a></font></center>
+<center> 【演示视频】</center><br><div id="dplayer25" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer25"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E8%BF%85%E9%9B%B7%E7%A0%B4%E8%A7%A3.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E8%BF%85%E9%9B%B7.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br><br><br><center><font size="5"><a href="https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E8%BF%85%E9%9B%B7SVIP.zip" target="_blank" rel="noopener">点这里，获取破解软件</a></font></center>
           
         
       
@@ -873,7 +1041,7 @@
 
       
         
-          <p><center> 【火车上拍贵州】</center><br><div id="dplayer20" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer20"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E7%81%AB%E8%BD%A6%E4%B8%8A%E6%8B%8D%E8%B4%B5%E5%B7%9E.MP4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/1.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br>
+          <p><center> 【火车上拍贵州】</center><br><div id="dplayer17" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer17"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/%E7%81%AB%E8%BD%A6%E4%B8%8A%E6%8B%8D%E8%B4%B5%E5%B7%9E.MP4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/%E8%A7%86%E9%A2%91/1.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/07/视频/#more" rel="contents">
@@ -1757,177 +1925,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/90后广告/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="崔大圣">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://treedyson.oss-cn-beijing.aliyuncs.com/2.1/%E5%A4%B4%E5%83%8F.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="大圣的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/23/90后广告/" itemprop="url">90后的记忆（广告篇）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-23T23:34:47+08:00">
-                2019-01-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/23/90后广告/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/23/90后广告/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/23/90后广告/" class="leancloud_visitors" data-flag-title="90后的记忆（广告篇）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <center><font color="#00f" size="4"><strong>90后的记忆（广告篇）</strong></font></center>    
-
-<center>回忆杀！那些年，我们看过的广告，你还记得吗？</center><br><center><font color="#08f" size="3">PS：<strong>最后一个广告是我童年阴影</strong></font></center> 
-
-<p><center> 【给妈妈洗脚】</center><br><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/%E7%BB%99%E5%A6%88%E5%A6%88%E6%B4%97%E8%84%9A.mp4","pic":"https://treedyson.oss-cn-beijing.aliyuncs.com/1.24/Screenshot_1.png?x-oss-process=style/mystyle"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/23/90后广告/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1980,7 +1977,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
